@@ -15,6 +15,7 @@ window.onload = function () {
 
   const db = firebase.firestore();
   const users = db.collection("users");
+  console.log(users)
   const query = users.where("isHelper", "==", false);
   query.get().then((users) => {
     var emergency = document.getElementById("pills-home");
@@ -41,7 +42,7 @@ window.onload = function () {
               `
         emergency.innerHTML += card;
         $(document).on('click', `#${i}`, function () {
-          url = `${BASE_URL}/helper/helper-requestcard.html?user=${encodeURIComponent(user.id)}&index=${encodeURIComponent(i)}`;
+          url = `${BASE_URL}/helper/helper-requestcard.html?userID=${encodeURIComponent(user.id)}&index=${encodeURIComponent(i)}`;
           document.location.href = url;
         });
       }
