@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   const app = firebase.app();
-  console.log(app);
 });
 
 function login() {
@@ -10,9 +9,21 @@ function login() {
     .auth()
     .signInWithPopup(provider)
     .then((result) => {
-      const user = result.user;
-      document.write(`Hello ${user.displayName}`);
-      console.log(user);
+      console.log(result.user.email);
+      const db = firebase.firestore();
+      const users = db.collection("users");
+      const query = users.where("email", "==", result.user.email);
+      query.get().then((users) => {
+        users.forEach((user) => {
+          data = user.data();
+          if (data.isHelper) {
+              url = `http://localhost:5002/helper-main.html?email=${encodeURIComponent(data.email)}`
+          } else {
+              url = `http://localhost:5002/refugee-main.html?email=${encodeURIComponent(data.email)}`
+          }
+          document.location.href = url;
+        });
+      });
     })
     .catch(console.log);
 }
