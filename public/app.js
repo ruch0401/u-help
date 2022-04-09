@@ -1,10 +1,11 @@
+import { BASE_URL } from "./common/baseurl.js";
+
 document.addEventListener("DOMContentLoaded", (event) => {
   const app = firebase.app();
 });
 
-function login() {
+document.getElementById("login-button").addEventListener("click", (event) => {
   const provider = new firebase.auth.GoogleAuthProvider();
-
   firebase
     .auth()
     .signInWithPopup(provider)
@@ -15,15 +16,20 @@ function login() {
       const query = users.where("email", "==", result.user.email);
       query.get().then((users) => {
         users.forEach((user) => {
-          data = user.data();
+          let data = user.data();
+          let url = "";
           if (data.isHelper) {
-              url = `http://localhost:5002/helper-main.html?email=${encodeURIComponent(data.email)}`
+            url = `${BASE_URL}/helper/helper-main.html?email=${encodeURIComponent(
+              data.email
+            )}`;
           } else {
-              url = `http://localhost:5002/refugee-main.html?email=${encodeURIComponent(data.email)}`
+            url = `${BASE_URL}/refugee/refugee-main.html?email=${encodeURIComponent(
+              data.email
+            )}`;
           }
           document.location.href = url;
         });
       });
     })
     .catch(console.log);
-}
+});
