@@ -48,4 +48,10 @@ window.onload = function () {
       }
     });
   });
+
+  $('#provide-help-button').click(() => {
+    const url = getDecodedUrlParams($(location).attr("href"));
+    console.log(url);
+    document.location.href = (`${BASE_URL}/refugee/provide-help-form.html?email=${url.email}`);
+  })
 }
