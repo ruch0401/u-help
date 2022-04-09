@@ -9,7 +9,6 @@ window.onload = () => {
 
     user.get().then(doc => {
         const data = doc.data();
-        console.log(data);
         $('#house-help-details').html(`${JSON.stringify(data)}`);
     });
 }

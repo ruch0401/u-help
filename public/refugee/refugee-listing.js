@@ -33,10 +33,7 @@ window.onload = () => {
                 }
                 $(document).on('click', `#${i}`, function () {
                     console.log(data);
-                    let tempQp = addToExistingQueryParams(document.location.href, "userId", `${user.id}`);
-                    let url = `${BASE_URL}/refugee/refugee-help-details.html?${tempQp}`;
-                    let qp = addToExistingQueryParams(url, "helpId", `${i}`);
-                    document.location.href = `${BASE_URL}/refugee/refugee-help-details.html?${qp}`;
+                    document.location.href = `${BASE_URL}/refugee/refugee-help-details.html?userId=${user.id}&helpId=${i}`;
                 });
             }
         });
