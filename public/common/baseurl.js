@@ -1,2 +1,2 @@
 // export const BASE_URL = "https://u-help.web.app/";
-export const BASE_URL = "http://localhost:5005";
+export const BASE_URL = "http://localhost:5002";
