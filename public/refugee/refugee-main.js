@@ -8,8 +8,8 @@ document
         document.location.href = `${BASE_URL}/refugee/refugee-listing.html?helpType=house`;
     });
 
-$('#request-help').click(() => {
+$('#fill-profile').click(() => {
     const url = getDecodedUrlParams($(location).attr("href"));
     console.log(url);
-    document.location.href = (`${BASE_URL}/refugee/request-help-form.html?email=${url.email}`);
+    document.location.href = (`${BASE_URL}/common/profile.html?email=${url.email}`);
 })

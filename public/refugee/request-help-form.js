@@ -18,10 +18,12 @@ $('#help-form-submit').click((event) => {
             const helpDescription = $('#exampleFormControlTextarea1').val();
             const helpObj = {};
             helpObj[helpCategory] = helpDescription
+            helpObj['timestamp'] = Date.now();
             help.push(helpObj);
             console.log(help);
             db.collection('users').doc(user.id).update({helpNeeded: help});
             $('#status').html(`<div class="alert alert-success" role="alert">Help posted successfully</div>`)
+            $('#exampleFormControlTextarea1').val('');
             setTimeout(() => {
                 $(".alert").alert('close');
             }, 5000)
@@ -33,3 +35,8 @@ $('#help-form-submit').click((event) => {
         }, 5000)
     });
 });
+
+$('#fill-profile').click(() => {
+    const url = getDecodedUrlParams($(location).attr("href"));
+    document.location.href = (`${BASE_URL}/refugee/profile.html?email=${url.email}`);
+})
