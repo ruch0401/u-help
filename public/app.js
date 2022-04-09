@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const app = firebase.app();
 });
 
-document.getElementById("login-button").addEventListener("click", (event) => {
+document.getElementById("google-login-button").addEventListener("click", (event) => {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase
     .auth()

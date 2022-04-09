@@ -18,13 +18,13 @@ window.onload = function () {
   console.log(users)
   const query = users.where("isHelper", "==", false);
   query.get().then((users) => {
-    var emergency = document.getElementById("pills-home");
+    var urgentHelp = document.getElementById("pills-urgent");
     users.forEach((user) => {
       console.log(user.id)
       data = user.data();
       for (let i = 0; i < data.helpNeeded.length; i++) {
         let card = `
-                  <div id="${i}" class="card mb-3" style="max-width: 540px;">
+                  <div id="${i}" class="card mb-3" style="margin:5% ">
                       <div class="row g-0">
                           <div class="col-md-4">
                               <img src="${data.image}" class="img-fluid rounded-start" alt="">
@@ -40,7 +40,7 @@ window.onload = function () {
                       </div>
                   </div>
               `
-        emergency.innerHTML += card;
+        urgentHelp.innerHTML += card;
         $(document).on('click', `#${i}`, function () {
           url = `${BASE_URL}/helper/helper-requestcard.html?userID=${encodeURIComponent(user.id)}&index=${encodeURIComponent(i)}`;
           document.location.href = url;
