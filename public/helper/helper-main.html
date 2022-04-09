@@ -42,10 +42,15 @@
 <body class="gradient-background">
     <h6 class="head-1">Thank you for choosing to help those who need it the most! You made the right choice!</h6>
     <div class="head-2"><img src="../images/ukraine-flag.png"></div>
+    <div style="text-align: center; margin-top: 2%;">
+        <button id="help-form-submit" class="btn btn-primary">I WANT TO HELP</button>
+        <button id="fill-profile" class="btn btn-primary">MY PROFILE</button>
+    </div>
+    <hr class="my-4">
     <ul class="nav nav-pills mb-3 mt-5" id="pills-tab" role="tablist" style="justify-content: center;">
         <li class="nav-item" role="presentation">
             <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
-                type="button" role="tab" aria-controls="pills-home" aria-selected="true">Urgent Help Requests</button>
+                type="button" role="tab" aria-controls="pills-home" aria-selected="true" onclick="displayHelpList()">Urgent Help Requests</button>
         </li>
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
