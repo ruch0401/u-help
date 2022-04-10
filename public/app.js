@@ -18,7 +18,7 @@ document.getElementById("google-login-button").addEventListener("click", (event)
         users.forEach((user) => {
           let data = user.data();
           let url = "";
-          if (data.isHelper) {
+          if (data.isHelper == "true") {
             url = `${BASE_URL}/helper/helper-main.html?email=${encodeURIComponent(data.email)}`;
           } else {
             url = `${BASE_URL}/refugee/refugee-main.html?email=${encodeURIComponent(data.email)}`;
