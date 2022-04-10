@@ -31,3 +31,9 @@ $('#request-help').click(() => {
     console.log(url);
     document.location.href = (`${BASE_URL}/refugee/request-help-form.html?email=${url.email}`);
 })
+
+$('#stress-beacon').click(() => {
+    const url = getDecodedUrlParams($(location).attr("href"));
+    console.log(url);
+    document.location.href = (`${BASE_URL}/refugee/beacon.html?email=${url.email}`);
+})
