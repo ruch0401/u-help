@@ -1,0 +1,27 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.gradient-background{
+    background-color: #ffd500;
+    background-image: linear-gradient(180deg, #ffd500 0%, #3b5998 100%);
+    background-repeat: no-repeat;
+}
+
+.head-1{
+    color: #3b5998;
+    text-align: center;
+    margin-top: 5%;
+    font-weight: bold;
+}
+
+.head-2{
+    text-align: center;
+}
+
+.label{
+    color: #3b5998;
+    font-weight: bold;
+    font-size: large;
+}

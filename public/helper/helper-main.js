@@ -10,16 +10,13 @@ function displayHelpList() {
     tmp = params[i].split('=');
     data[tmp[0]] = decodeURIComponent(tmp[1]);
   }
-  console.log(data);
-
+  
   const db = firebase.firestore();
   const users = db.collection("users");
-  console.log(users)
   const query = users.where("isHelper", "==", false);
   query.get().then((users) => {
     var urgentHelp = document.getElementById("pills-urgent");
     users.forEach((user) => {
-      console.log(user.id)
       data = user.data();
       for (let i = 0; i < data.helpNeeded.length; i++) {
         let helpCategory = Object.keys(data.helpNeeded[i])[0].toUpperCase();
@@ -28,7 +25,6 @@ function displayHelpList() {
         }
         let helpText = data.helpNeeded[i][helpCategory.toLowerCase()];
         let helpDate = new Date(data.helpNeeded[i]['timestamp']);
-        console.log(helpDate)
         let card = `
                   <div id="${i}" class="card mb-3" style="margin:5% ">
                       <div class="row g-0">

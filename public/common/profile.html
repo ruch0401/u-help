@@ -1,14 +1,22 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Profile</title>
     <link rel="shortcut icon" href="#">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@400;700&family=Poppins:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="profile.css">
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/9.6.10/firebase-app-compat.js"></script>
     <!-- include only the Firebase features as you need -->
@@ -26,49 +34,53 @@
       to avoid connecting the SDK to running emulators.
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
-<body>
 
-<div class="container">
-    <h3>Profile</h3>
-    <div id="status"></div>
-    <form>
-        <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="custom-is-helper">
-            <label class="form-check-label" for="custom-is-helper">Check if you are a helper</label>
-        </div>
-        <div class="form-group">
-            <label for="custom-first-name">First Name</label>
-            <input type="text" class="form-control" id="custom-first-name" placeholder="Enter first name">
-        </div>
-        <div class="form-group">
-            <label for="custom-last-name">Last Name</label>
-            <input type="text" class="form-control" id="custom-last-name" placeholder="Enter last name">
-        </div>
-        <div class="form-group">
-            <label for="custom-mobile">Mobile Number</label>
-            <input type="number" class="form-control" id="custom-mobile" placeholder="Enter mobile">
-        </div>
-        <div class="form-group">
-            <label for="custom-image">Image</label>
-            <input type="text" class="form-control" id="custom-image" placeholder="Enter image URL">
-        </div>
-        <div class="form-group">
-            <label for="custom-address">Address</label>
-            <input type="text" class="form-control" id="custom-address" placeholder="Enter address">
-        </div>
-        <div class="form-group">
-            <label for="custom-story">Tell your story</label>
-            <textarea class="form-control" id="custom-story" rows="3"></textarea>
-        </div>
-        <button id="profile-submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
+<body class="gradient-background">
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    <div class="container">
+        <h3 class="head-1">Profile</h3>
+        <div id="status"></div>
+        <form>
+            <div class="form-check" style="margin-top: 3%;">
+                <input type="checkbox" class="form-check-input" id="custom-is-helper">
+                <label class="form-check-label label" for="custom-is-helper">Check this box if you want to provide help to people in need</label>
+            </div>
+            <div class="form-group" style="margin-top: 3%;">
+                <label class="label" for="custom-first-name">First Name</label>
+                <input type="text" class="form-control" id="custom-first-name" placeholder="Enter first name">
+            </div>
+            <div class="form-group" style="margin-top: 3%;">
+                <label class="label" for="custom-last-name">Last Name</label>
+                <input type="text" class="form-control" id="custom-last-name" placeholder="Enter last name">
+            </div>
+            <div class="form-group" style="margin-top: 3%;">
+                <label class="label" for="custom-mobile">Mobile Number</label>
+                <input type="number" class="form-control" id="custom-mobile" placeholder="Enter mobile">
+            </div>
+            <div class="form-group" style="margin-top: 3%;">
+                <label class="label" for="custom-image">Image</label>
+                <input type="text" class="form-control" id="custom-image" placeholder="Enter image URL">
+            </div>
+            <div class="form-group" style="margin-top: 3%;">
+                <label class="label" for="custom-address">Address</label>
+                <input type="text" class="form-control" id="custom-address" placeholder="Enter address">
+            </div>
+            <div class="form-group" style="margin-top: 3%;">
+                <label class="label" for="custom-story">Tell your story (e.g. How did you end up where you are now? Why do you want to help the people in need?)</label>
+                <textarea class="form-control" id="custom-story" rows="3"></textarea>
+            </div>
+            <div style="text-align: center;"><button id="profile-submit" class="btn btn-primary" style="margin-top: 3%; margin-bottom: 10%; background-color: #3b5998; border-color: #3b5998;">Submit</button></div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-<script type="module" src="./profile.js"></script>
+    <script type="module" src="./profile.js"></script>
 </body>
+
 </html>
