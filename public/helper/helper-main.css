@@ -19,3 +19,23 @@ body{
 .head-2{
     text-align: center;
 }
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #3b5998;
+}
+
+.map-height{
+    height: 50vh;
+    width: 100vh;
+}
+
+@media only screen and (max-width: 600px) {
+    .head-1{
+        margin-top: 10%;
+    }
+
+    .map-height{
+        height: 30vh
+    }
+  }

@@ -25,3 +25,9 @@ body{
     font-weight: bold;
     font-size: large;
 }
+
+@media only screen and (max-width: 600px) {
+    .head-1{
+        margin-top: 10%;
+    }
+}

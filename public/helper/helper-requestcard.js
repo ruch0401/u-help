@@ -39,7 +39,7 @@ window.onload = function () {
             <h5 class="head-intro"> Thank you for your support! Here's what I need some assisstance with</h5>
             <h5 style="text-align:center; margin-top:1%;">${helpText}</h5>
             <h5 class="head-intro"> If you feel you'll be able to help me out, here's my contact information</h5>
-            <h5 style="text-align:center;margin-top:1%; margin-bottom:5%;">Mobile -> ${data.mobile} <br> Email -> ${data.email} <br> Current Location -> </h5>
+            <h5 style="text-align:center;margin-top:1%; margin-bottom:5%;">Mobile - <a href="tel:+1${data.mobile}" style="color:white">${data.mobile}</a> <br> Email - <a href="mailto:+1${data.email}" style="color:white">${data.email}</a> <br> Location - ${data.address}</h5>
         `
 
         details.innerHTML = detail;

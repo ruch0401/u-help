@@ -11,7 +11,7 @@ body{
     font-weight: bold;
     text-align: center;
     color: #005BBB;
-    padding-top: 10%;
+    padding-top: 5%;
 }
 
 .head-2{
@@ -40,3 +40,9 @@ body{
 .head-5{
     text-align: center;
 }
+
+@media only screen and (max-width: 600px) {
+    .head-1{
+        padding-top: 20%;
+    }
+  }

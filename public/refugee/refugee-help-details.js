@@ -26,7 +26,7 @@ window.onload = () => {
             <h5 class="head-intro"> Thank you for reaching out! Here's how I can assist you</h5>
             <h5 style="text-align:center; margin-top:1%;">${helpText}</h5>
             <h5 class="head-intro"> If you feel this is what you are looking for, here's my contact information</h5>
-            <h5 style="text-align:center;margin-top:1%; margin-bottom:5%;">Mobile -> <a href="tel:+1${data.mobile}">${data.mobile}</a> <br> Email -> <a href="mailto:+1${data.email}">${data.email}</a> <br> Location -> </h5>
+            <h5 style="text-align:center;margin-top:1%; margin-bottom:5%;">Mobile - <a href="tel:+1${data.mobile}" style="color:white">${data.mobile}</a> <br> Email - <a href="mailto:+1${data.email}" style="color:white">${data.email}</a> <br> Location - ${data.address} </h5>
         `
 
         details.innerHTML = detail;

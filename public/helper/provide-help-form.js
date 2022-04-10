@@ -20,7 +20,7 @@ $('#help-form-submit').click((event) => {
             helpObj[helpCategory] = helpDescription
             help.push(helpObj);
             console.log(help);
-            db.collection('users').doc(user.id).update({helpNeeded: help});
+            db.collection('users').doc(user.id).update({helpProvided: help});
             $('#status').html(`<div class="alert alert-success" role="alert">Help posted successfully</div>`)
             setTimeout(() => {
                 $(".alert").alert('close');

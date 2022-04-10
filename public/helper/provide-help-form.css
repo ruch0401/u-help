@@ -25,3 +25,14 @@ body{
     font-weight: bold;
     font-size: large;
 }
+
+.form-class{
+    margin-top: 5%; 
+    height: 100vh;
+}
+
+@media only screen and (max-width: 600px) {
+    .form-class{
+        margin-top: 10%; 
+    }
+  }

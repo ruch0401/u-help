@@ -19,7 +19,6 @@ function displayHelpList() {
     var beaconHelp = document.getElementById("pills-non-urgent");
     users.forEach((user) => {
       data = user.data();
-      console.log(data)
       for (let i = 0; i < data.helpNeeded.length; i++) {
         let helpCategory = ''; 
         Object.keys(data.helpNeeded[i]).forEach(obj => {
@@ -33,21 +32,20 @@ function displayHelpList() {
               helpCategory = 'beacon'
             }
         });
-        console.log(helpCategory)
         let helpText = data.helpNeeded[i][helpCategory];
         let helpDate = new Date(data.helpNeeded[i]['timestamp']);
         let card = `
                   <div id="${data.fname}${i}" class="card mb-3" style="margin:5% ">
                       <div class="row g-0">
-                          <div class="col-md-4">
-                              <img src="${data.image}" class="img-fluid rounded-start" alt="">
+                          <div class="col-md-5">
+                              <img src="${data.image}" class="img-fluid rounded-start" alt="" style="width:100%; height:100%">
                           </div>
-                          <div class="col-md-8">
+                          <div class="col-md-7">
                               <div class="card-body">
-                                  <h2 class="card-title" style="font-weight:bold">${data.fname}&nbsp;${data.lname}</h2>
-                                  <span class="badge rounded-pill bg-primary" style="background-color:#005BBB; font-size: 15px">${helpCategory}</span>
+                                  <h2 class="card-title" style="font-weight:bold; margin-top:2%; margin-bottom: 2%">${data.fname}&nbsp;${data.lname}</h2>
+                                  <span class="badge rounded-pill bg-primary" style="background-color:#005BBB; font-size: 15px">REQUIRES ${helpCategory.toUpperCase()} HELP</span>
                                   <p class="card-text" style="margin-top:5%; font-size: 20px">${helpText}</p>
-                                  <p class="card-text"><small class="text-muted">Posted on ${helpDate.getMonth()}/${helpDate.getDay()}/${helpDate.getFullYear()}</small></p>
+                                  <p class="card-text" style=""><small class="text-muted">Posted on ${helpDate.getMonth()}/${helpDate.getDate()}/${helpDate.getFullYear()}</small></p>
                               </div>
                           </div>
                       </div>
@@ -55,17 +53,17 @@ function displayHelpList() {
               `
 
         let beaconCard = `
-              <div id="${data.fname}${i}-beacon" class="card mb-3" style="margin:5% ">
+              <div id="${data.fname}${i}-beacon" class="card mb-3" style="margin:5%; height:100%">
                   <div class="row g-0">
-                      <div class="col-md-8">
-                        <div id="${data.fname}-map" style="height: 100%"></div>
+                      <div class="col-md-8 col-12">
+                        <div class="map-height" id="${data.fname}-map"></div>
                       </div>
-                      <div class="col-md-4">
+                      <div class="col-md-4 col-12">
                           <div class="card-body">
-                              <h2 class="card-title" style="font-weight:bold">${data.fname}&nbsp;${data.lname}</h2>
-                              <span class="badge rounded-pill bg-primary" style="background-color:#005BBB; font-size: 15px">${helpCategory}</span>
+                              <h2 class="card-title" style="font-weight:bold; margin-top:2%; margin-bottom: 2%"">${data.fname}&nbsp;${data.lname}</h2>
+                              <span class="badge rounded-pill bg-danger" style="background-color:#005BBB; font-size: 15px">EMERGENCY ${helpCategory.toUpperCase()}</span>
                               <p class="card-text" style="margin-top:5%; font-size: 20px">${helpText}</p>
-                              <p class="card-text"><small class="text-muted">Posted on ${helpDate.getMonth()}/${helpDate.getDay()}/${helpDate.getFullYear()}</small></p>
+                              <p class="card-text"><small class="text-muted">Posted on ${helpDate.getMonth()}/${helpDate.getDate()}/${helpDate.getFullYear()}</small></p>
                           </div>
                       </div>
                   </div>
@@ -76,7 +74,7 @@ function displayHelpList() {
           urgentHelp.innerHTML += card;
         else{
           beaconHelp.innerHTML += beaconCard;
-          initMap();
+          
           function initMap() {
             let map;
             let coords = {};
@@ -93,8 +91,9 @@ function displayHelpList() {
               map,
             });
           }
+          initMap();
         }
-
+        
         $(document).on('click', `#${data.fname}${i}`, function () {
           url = `${BASE_URL}/helper/helper-requestcard.html?userID=${encodeURIComponent(user.id)}&index=${encodeURIComponent(i)}`;
           document.location.href = url;

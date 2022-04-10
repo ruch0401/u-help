@@ -14,19 +14,20 @@ window.onload = () => {
             
             console.log(data)
             for (let i = 0; i < data.helpProvided.length; i++) {
-                if(data.helpProvided[i].house !== undefined){
+                console.log(data.helpProvided[i].housing !== undefined)
+                if(data.helpProvided[i].housing !== undefined){
                     let helpCategory = Object.keys(data.helpProvided[i])[0].toUpperCase();
                     let helpText = data.helpProvided[i][helpCategory.toLowerCase()];
                     let card = `
                                 <div id="${data.fname}${i}" class="card mb-3" style="margin:5% ">
                                     <div class="row g-0">
                                         <div class="col-md-4">
-                                            <img src="${data.image}" class="img-fluid rounded-start" alt="">
+                                            <img src="${data.image}" class="img-fluid rounded-start" alt=""  style="width:100%; height:100%">
                                         </div>
                                         <div class="col-md-8">
                                             <div class="card-body">
                                                 <h2 class="card-title" style="font-weight:bold">${data.fname}&nbsp;${data.lname}</h2>
-                                                <span class="badge rounded-pill bg-primary" style="background-color:#005BBB; font-size: 15px">${helpCategory}</span>
+                                                <span class="badge rounded-pill bg-primary" style="background-color:#005BBB; font-size: 15px">CAN PROVIDE ${helpCategory} HELP</span>
                                                 <p class="card-text" style="margin-top:5%; font-size: 20px">${helpText}</p>
                                             </div>
                                         </div>
