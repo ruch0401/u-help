@@ -13,11 +13,12 @@ function displayHelpList() {
   
   const db = firebase.firestore();
   const users = db.collection("users");
-  const query = users.where("isHelper", "==", false);
+  const query = users.where("isHelper", "==", "false");
   query.get().then((users) => {
     var urgentHelp = document.getElementById("pills-urgent");
     users.forEach((user) => {
       data = user.data();
+      console.log(data)
       for (let i = 0; i < data.helpNeeded.length; i++) {
         let helpCategory = Object.keys(data.helpNeeded[i])[0].toUpperCase();
         if (helpCategory == "TIMESTAMP") {
@@ -26,7 +27,7 @@ function displayHelpList() {
         let helpText = data.helpNeeded[i][helpCategory.toLowerCase()];
         let helpDate = new Date(data.helpNeeded[i]['timestamp']);
         let card = `
-                  <div id="${i}" class="card mb-3" style="margin:5% ">
+                  <div id="${data.fname}${i}" class="card mb-3" style="margin:5% ">
                       <div class="row g-0">
                           <div class="col-md-4">
                               <img src="${data.image}" class="img-fluid rounded-start" alt="">
@@ -43,7 +44,7 @@ function displayHelpList() {
                   </div>
               `
         urgentHelp.innerHTML += card;
-        $(document).on('click', `#${i}`, function () {
+        $(document).on('click', `#${data.fname}${i}`, function () {
           url = `${BASE_URL}/helper/helper-requestcard.html?userID=${encodeURIComponent(user.id)}&index=${encodeURIComponent(i)}`;
           document.location.href = url;
         });

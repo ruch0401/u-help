@@ -5,7 +5,7 @@ import { BASE_URL } from "../common/baseurl.js";
 window.onload = () => {
     const db = firebase.firestore();
     const users = db.collection("users");
-    const query = users.where("isHelper", "==", true);
+    const query = users.where("isHelper", "==", "true");
 
     query.get().then(users => {
         let houseHelpListingContainer = document.getElementById("house-help-listing");
@@ -18,7 +18,7 @@ window.onload = () => {
                     let helpCategory = Object.keys(data.helpProvided[i])[0].toUpperCase();
                     let helpText = data.helpProvided[i][helpCategory.toLowerCase()];
                     let card = `
-                                <div id="${i}" class="card mb-3" style="margin:5% ">
+                                <div id="${data.fname}${i}" class="card mb-3" style="margin:5% ">
                                     <div class="row g-0">
                                         <div class="col-md-4">
                                             <img src="${data.image}" class="img-fluid rounded-start" alt="">
@@ -36,7 +36,7 @@ window.onload = () => {
                     if (houseHelpListingContainer !== null) {
                         houseHelpListingContainer.innerHTML += card;
                     }
-                    $(document).on('click', `#${i}`, function () {
+                    $(document).on('click', `#${data.fname}${i}`, function () {
                         console.log(data);
                         document.location.href = `${BASE_URL}/refugee/refugee-help-details.html?userId=${user.id}&helpId=${i}`;
                     });

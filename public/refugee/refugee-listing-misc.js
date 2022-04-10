@@ -5,7 +5,7 @@ import { BASE_URL } from "../common/baseurl.js";
 window.onload = () => {
     const db = firebase.firestore();
     const users = db.collection("users");
-    const query = users.where("isHelper", "==", true);
+    const query = users.where("isHelper", "==", "true");
 
     query.get().then(users => {
         let houseHelpListingContainer = document.getElementById("house-help-listing");
@@ -15,7 +15,8 @@ window.onload = () => {
             console.log(data)
             console.log(data.helpProvided[1].legal !== undefined)
             for (let i = 0; i < data.helpProvided.length; i++) {
-                if (data.helpProvided[i].legal == undefined && data.helpProvided[i].house == undefined) {
+                if (data.helpProvided[i].miscellaneous != undefined) {
+                    console.log("Here")
                     let helpCategory = Object.keys(data.helpProvided[i])[0].toUpperCase();
                     let helpText = data.helpProvided[i][helpCategory.toLowerCase()];
                     let card = `

@@ -5,7 +5,7 @@ import { BASE_URL } from "../common/baseurl.js";
 window.onload = () => {
     const db = firebase.firestore();
     const users = db.collection("users");
-    const query = users.where("isHelper", "==", true);
+    const query = users.where("isHelper", "==", "true");
 
     query.get().then(users => {
         let houseHelpListingContainer = document.getElementById("house-help-listing");
