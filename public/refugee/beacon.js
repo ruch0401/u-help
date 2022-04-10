@@ -46,19 +46,11 @@ $("#send-text-data").click((event) => {
             helpObj["coordinates"] = myLatLng;
             helpObj['timestamp'] = Date.now();
             help.push(helpObj);
-            console.log(help);
 
             db.collection('users').doc(user.id).update({ helpNeeded: help });
-            $('#status').html(`<div class="alert alert-success" role="alert">Beacon transmitted successfully!</div>`)
-            $('#recorded-help').val('');
-            setTimeout(() => {
-                $(".alert").alert('close');
-            }, 5000)
+
         });
-    }).catch(() => {
-        $('#status').html(`<div class="alert alert-danger" role="alert">Error while transmitting beacon!</div>`)
-        setTimeout(() => {
-            $(".alert").alert('close');
-        }, 5000)
+    }).catch((error) => {
+        console.log(error);
     });
 });
