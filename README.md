@@ -111,6 +111,17 @@ ideation to prototyping to implementation to execution, we were able to understa
 The filtering and matching for refugee and helper can be improved and filtered based on geographic locations. On a
 broader front, various U-Help can work with various NGOs to join resources to help serve refugees better.
 
+## Presentation Bullets 🎁
+
+- February 24, 2022 - Russia invades Ukraine. While we heard the headlines, the Ukrainian natives heard gun shots; while we saw the news on TV, the Ukrainian natives experienced the blood bath in person; while we proposed expert advices on govenment rulings from the comfort of our homes, somewhere in Ukraine, a child hugged his parents tighter, as the family saw their homes being turned into shambles. 46 days later, the war continues. As leaders attempt to sort the situation diplomatically, hundreds of family lose their homes with every passing hour. As of April 6th, 2022, more than 4.3 million people have left Ukraine to go as refugees to other contries such as Poland, Romania, Hungary, etc. We have been reading this in news everyday but what we tend to forget is this - “Refugees didn’t just escape a place. They had to escape a thousand memories until they’d put enough time and distance between them and their misery to wake to a better day.”.
+- It is a single app - adapts to the login based on whether helper or the refugee is logging in
+- The refugee wants some help so he clicks on "I want to post a help" button. He enters the category of help he wants along with some description.
+- Once done, the help is visible to the helper in real time. The helper views this help card and can also view the details of the refugee that had requested the help. As you can see, he can click contact the refugee using phone or email as well. 
+- Also, the helper can post that he is ready to help in one of the categories. So he enters the details which is visible to the refugee in real time. At the refugee end, all types of helps are neatly categorized in order for the refugee to be able to view it on need basis
+- The refugee can also send a beacon signal where in he can record a quick audio of the problem and click on send once it has been recorded. Automatically, a distress email is generated available for the refugee in just a click.
+- The helper can view this beacon along with the location from where the beacon was raised. This location is the real time location of the site from where the distress signal was raised. As you can see, the helper can also look at the surroundings and decide whether he would be the right candidate to help the refugee in need.
+- In this way, our platform, U-Help, aims to make it easier to get help in a new country thereby connecting victims of war to heroes of peace!
+
 ## Warning ⚠️
 
 ---
