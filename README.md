@@ -4,7 +4,7 @@
 
 ---
 
-## Demo
+## Demo 📈
 
 <a href="https://www.youtube.com/watch?v=ICVxoOJpAhc" target="_blank">
  <img src="public/images/u-help-banner.png" alt="Watch the video for project demo"/>
@@ -12,7 +12,7 @@
 
 ---
 
-## Devpost
+## Devpost 📭
 
 <a href="https://devpost.com/software/u-hack" target="_blank">
  <img src="public/images/stress-beacon.png" alt="Devpost"/>
@@ -54,10 +54,10 @@ Our app is feature-rich and provides the following functionality -
 
 ## How we built it ⚙️
 
-| Area      | Technology Used |
-| ----------- | ----------- |
-| Frontend      | `HTML`, `CSS`, `Javascript`       |
-| Services   | `Firebase`, `Google Cloud Platform`, `Google Maps Javascript API`        |
+| Area     | Technology Used                                                   |
+| -------- | ----------------------------------------------------------------- |
+| Frontend | `HTML`, `CSS`, `Javascript`, `Bootstrap`                          |
+| Services | `Firebase`, `Google Cloud Platform`, `Google Maps Javascript API` |
 
 ## Research 📚
 
@@ -106,7 +106,63 @@ from scratch was definitely a challenge.
 Time management and scope limitation is the key to a successful completion and submission. Also, the entire process from
 ideation to prototyping to implementation to execution, we were able to understand each step of the pipeline.
 
-## What's next for U-Help
+## What's next for U-Help ⏭️
 
 The filtering and matching for refugee and helper can be improved and filtered based on geographic locations. On a
 broader front, various U-Help can work with various NGOs to join resources to help serve refugees better.
+
+## Warning ⚠️
+
+---
+
+🏮 `All API accesses have been revoked. The project cannot be tried hands-on. Please view the working video for the demo.`
+
+---
+
+## Gallery 📷
+
+### Common
+
+| ![login.png](public/images/login.png) |
+| :-----------------------------------: |
+|              Login Page               |
+
+### Helper Module
+
+| ![helper.png](public/images/helper.png) |
+| :-------------------------------------: |
+|           Helper Landing Page           |
+
+| ![helper-provide-help-form.png](public/images/helper-provide-help-form.png) |
+| :-------------------------------------------------------------------------: |
+|                         Helper (Provide Help Form)                          |
+
+| ![stress-beacon.png](public/images/stress-beacon.png) |
+| :---------------------------------------------------: |
+|            Helper Stress Beacon View Page             |
+
+### Refugee Module
+
+| ![refugee-main-page.png](public/images/refugee-main-page.png) |
+| :-----------------------------------------------------------: |
+|                     Refugee Landing Page                      |
+
+| ![house-listings.png](public/images/house-listings.png) |
+| :-----------------------------------------------------: |
+|               Refugee House Help Listings               |
+
+| ![legal-listings.png](public/images/legal-listings.png) |
+| :-----------------------------------------------------: |
+|               Refugee Legal Help Listings               |
+
+| ![miscellaneous-listings.png](public/images/miscellaneous-listings.png) |
+| :---------------------------------------------------------------------: |
+|                   Refugee Miscellaneous Help Listings                   |
+
+| ![request-help-form-page.png](public/images/request-help-form-page.png) |
+| :---------------------------------------------------------------------: |
+|                     Request Help Form for Refugees                      |
+
+| ![beacon.png](public/images/beacon.png) |
+| :-------------------------------------: |
+|      Refugee Stress Beacon Feature      |
