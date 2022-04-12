@@ -126,7 +126,7 @@ broader front, various U-Help can work with various NGOs to join resources to he
 
 ---
 
-🏮 `All API accesses have been revoked. The project cannot be tried hands-on. Please view the working video for the demo.`
+🏮 `All API accesses have been revoked. The project cannot be tried hands-on. Please view the working video for the demo..`
 
 ---
 
